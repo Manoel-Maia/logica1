@@ -3,68 +3,58 @@ let array01 = ["arroz", "feijao", "batata", "macarrao"];
 console.log(array01);
 
 //01
+// Crie uma função que adiciona um elemento ao final deum array
 const addLast = (array, value) => {
-  array01.push(value);
+  array.push(value);
   console.log(array);
   return array;
 };
-array01 = addLast(array01, "sardinha");
+
+addLast(array01, "sardinha");
 
 //02
-/*
-    perdoe-me pai, pois eu pequei e fiz uma gambiarra maldita
-    let remove1st = () => {
-    let tempArray = array01.reverse();
-    tempArray.pop()
-    array01 = tempArray.reverse();
-    console.log(array01);
-}
-remove1st()
-*/
-
-//agora fiz direito:
+//crie uma função que remove o primeiro elemento de um array
 let remove1st = (array) => {
   array.shift();
-  console.log(array01);
+  console.log(array);
   return array;
 };
-array01 = remove1st(array01);
+remove1st(array01);
 
 //03
+//crie uma função que adiciona um elemento no inicio de um array
 const add1st = (array, value) => {
   array01.unshift(value);
   console.log(array);
   return array;
 };
-array01 = add1st(array01, "espinafre");
+add1st(array01, "espinafre");
 
 //04
-/*remover ultimo elemento de um array*/
-
+/*crie uma função que remove o ultimo elemento de um array*/
 const removeLast = (array) => {
   array.pop();
   console.log(array);
   return array;
 };
-array01 = removeLast(array01);
+removeLast(array01);
 
 //05
-/*alterar o valor de um array qualquer dentro da lista*/
-const poderiaFazerSemUsarUmaVariavel = (array, index, value) => {
+/*crie uma função que substitui um elemento em uma posição especifica de um array*/
+const changeElement = (array, index, value) => {
   array[index] = value;
   console.log(array01);
   return array;
 };
-array01 = poderiaFazerSemUsarUmaVariavel(array01, 1, "suriname");
+changeElement(array01, 1, "suriname");
 
 //06
-/*adicionar multiplos elementos ao final de um array */
+/*crie uma função que adiciona multiplos elementos ao final de um array*/
 const addPack = (array, pack) => {
   array = array.concat(pack);
   console.log(array);
-  return array;
 };
-array01 = addPack(array01, ["maminha", "picanha", "baiacu"]);
+addPack(array01, ["maminha", "picanha", "baiacu"]);
 console.log(array01);
 
 //07
@@ -79,21 +69,18 @@ O indice e o elemento a ser inserido devem ser passados como argumentos.*/
  * @param {*} value valor (em array) a ser concatenado ao array original
  * @returns retorna a mudança no array original.
  */
-function addMid(array, index, value) {
-  let temp1;
-  let temp2;
-  if (index == 0) index++;
-  if (index > 1) {
-    temp1 = array.slice(0, index - 1);
-  } else temp1 = [];
-  temp2 = array.slice(index - 1, array.length);
-  array = temp1.concat(value.concat(temp2));
-  console.log(array);
-  return array;
+function addMid(array, start, end, value) {
+  array.splice(start, end, value);
 }
-array01 = addMid(array01, 1, ["brasil", "argelia", "turma-da-monica"]);
+console.log("antes da alteração n.7:");
+console.log(array01);
+array01 = addMid(array01, 1, 3, ["brasil", "argelia", "turma-da-monica"]);
+console.log("depois da alteração n.7:");
+console.log(array01);
 
 //08
+/*crie uma função que remove um elemento de uma posição específica de um array.
+o indice do elemento a ser removido deve ser passado como argumento.*/
 function removeMid(array, index, numOfElements) {
   if (index == 0) index++;
   if (index > 1) {
@@ -105,3 +92,13 @@ function removeMid(array, index, numOfElements) {
 }
 array01 = removeMid(array01, 1, 3);
 console.log(array01);
+
+//09
+/*crie uma função que move um elemento de uma posição para outra em um array
+ utilizando os metodos splice e push. o indice original e o novo indice 
+ devem ser passados como argumentos.*/
+
+//10
+/*escreva um programa que pergunte a velocidade de um carro. caso ultrapasse 
+80hm/h, exiba uma mensagem dizendo que o usuario foi multado e exiba o valor 
+da multa cobrando R$5 por cada km acima da velocidade permitida*/
