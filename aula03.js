@@ -91,10 +91,7 @@ console.log("n.9");
 function changePos(array, from, to) {
   let val1 = array[from];
   let val2 = array[to];
-  array.splice(from, from, val2);
-  console.log(array);
-  array.splice(to, to, val1);
-  console.log(array);
+  array.splice(from, from, array[to]);
 }
 changePos(array01, 1, 3);
 console.log(array01);
