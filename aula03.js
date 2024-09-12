@@ -87,6 +87,10 @@ console.log(array01);
 /*crie uma função que move um elemento de uma posição para outra em um array
  utilizando os metodos splice e push. o indice original e o novo indice 
  devem ser passados como argumentos.*/
+
+/*Professor disse para usar o push e eu acho que posso usar o push quebrando o array 
+depois do primeiro splice e atribuindo o valor que sobra ao array com o push, dependendo
+de o que o splice retorna quando aplicado*/
 console.log("n.9");
 function changePos(array, from, to) {
   let val1 = array[from];
